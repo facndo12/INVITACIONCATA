@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffebee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: #ee6cd2;
+    overflow: hidden;
+}
+
+.container {
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 500px;
+    width: 90%;
+    height: 75vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.photo-animation {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.zoom-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoomInOut 3s ease-in-out forwards;
+}
+
+.invitation-content {
+    padding: 20px;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 2rem;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.date, .place, .time {
+    font-weight: bold;
+}
+
+.rsvp-btn {
+    background-color: #f3bc45;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.rsvp-btn:hover {
+    background-color: #b71c1c;
+}
+
+/* Animaciones */
+@keyframes zoomInOut {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contenedor para el confeti */
+.confeti-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* Estilo del confeti */
+  .confeti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    opacity: 0;
+    animation: salto 2s ease-out infinite, caida 3s 2s ease-in infinite;
+  }
+  
+  /* Colocamos el confeti en diferentes lugares con un "delay" y "animation" distintos */
+  .confeti:nth-child(1) {
+    background-color: #ff6f61;
+    left: 20%;
+    animation-delay: 0s;
+  }
+  
+  .confeti:nth-child(2) {
+    background-color: #4caf50;
+    left: 40%;
+    animation-delay: 0.2s;
+  }
+  
+  .confeti:nth-child(3) {
+    background-color: #2196f3;
+    left: 60%;
+    animation-delay: 0.4s;
+  }
+  
+  .confeti:nth-child(4) {
+    background-color: #9c27b0;
+    left: 80%;
+    animation-delay: 0.6s;
+  }
+  
+  .confeti:nth-child(5) {
+    background-color: #ff9800;
+    left: 10%;
+    animation-delay: 0.8s;
+  }
+  
+  /* Animación de salto */
+  @keyframes salto {
+    0% {
+      transform: translateY(0) rotate(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-200px) rotate(180deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0) rotate(360deg);
+      opacity: 0.5;
+    }
+  }
+  
+  /* Animación de caída */
+  @keyframes caida {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
